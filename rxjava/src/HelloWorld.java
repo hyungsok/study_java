@@ -10,10 +10,10 @@ public class HelloWorld {
         // 0..N flows, no backpressure
         Observable.just("Observale - HelloWorld").subscribe(System.out::println);
         /**
-         * OperatorSingle 은 Observable 과는 다르게 onSuccess(item) 과 onError(throwable)만을 가진다.
+         * single.Sample1 은 Observable 과는 다르게 onSuccess(item) 과 onError(throwable)만을 가진다.
          * 비동기 처리 후 결과만을 반환해야 하는 경우, 즉 위와 같이 dao 등을 통해 데이터를 비동기로 불러오고자 하는 경우에 적절하다.
          */
-        Single.just("OperatorSingle - HelloWorld").subscribe(System.out::println);
+        Single.just("single.Sample1 - HelloWorld").subscribe(System.out::println);
         /**
          * Completable 은 onCompleted() 와 onError(throwable) 만을 가진다.
          * 비동기 처리 후 반환되는 결과가 없는 경우 사용하면 된다.
