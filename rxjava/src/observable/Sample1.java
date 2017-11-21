@@ -18,19 +18,18 @@ public class Sample1 {
 
         String[] arrays = {"a", "b", "c"};
         Observable.fromArray(arrays)
-                .subscribe(sObserver);
-        // 람다 표현식
-//              .subscribe(
-//                        value -> System.out.println("++ onNext() : " + value)
-//                        , throwable -> throwable.printStackTrace()
-//                        , () -> System.out.println("++ onComplete()"));
+              .subscribe(
+                        value -> System.out.println("++ onNext() : " + value)
+                        , throwable -> throwable.printStackTrace()
+                        , () -> System.out.println("++ onComplete()"));
     }
+
+
 
     private static Observer<String> sObserver = new Observer<String>() {
         @Override
         public void onSubscribe(@NonNull Disposable disposable) {
             System.out.println("++ onSubscribe() : " + disposable);
-            System.out.println("\t>> isDisposed : " + disposable.isDisposed());
         }
 
         @Override
